@@ -22,6 +22,18 @@ ResultView.prototype.bindEvent = function(){
     const family_desc = document.createElement('p');
     family_desc.textContent = family_obj.description;
     instFamilyContainer.appendChild(family_desc);
+    const family_insts_header = document.createElement('h4');
+    family_insts_header.textContent = 'Instruments of this family include';
+    instFamilyContainer.appendChild(family_insts_header);
+    const family_insts_list = document.createElement('ul');
+    instFamilyContainer.appendChild(family_insts_list);
+    const unorderedList = document.querySelector('ul');
+    const inst_ary = family_obj.instruments;
+    for (inst of inst_ary ){
+      const inst_str = document.createElement('li');
+      inst_str.textContent = inst;
+      unorderedList.appendChild(inst_str);
+    }
   };
 
 
