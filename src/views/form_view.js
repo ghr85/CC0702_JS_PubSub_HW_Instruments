@@ -18,6 +18,7 @@ FormView.prototype.bindEvent = function(){
   instFamilySelect.addEventListener('change', (evt) => {
     const selectedIndex = evt.target.value;
     PubSub.publish('FormView:change', selectedIndex);
+    console.log(selectedIndex)
   });
 };
 

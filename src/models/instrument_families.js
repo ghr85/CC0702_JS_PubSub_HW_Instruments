@@ -6,7 +6,6 @@ const InstrumentFamilies = function(data_ary) {
 
 
 InstrumentFamilies.prototype.bindEvent = function () {
-
   PubSub.publish('InstrumentFamilies:Ready', this.data);
   PubSub.subscribe('FormView:change',(event)=>{
     const selection_int = event.detail;
